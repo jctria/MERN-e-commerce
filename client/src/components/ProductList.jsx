@@ -48,10 +48,12 @@ const ProductList = () => {
 
     // Scroll to top
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'auto'
-        });
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'auto'
+            });
+        }, 300);
     };
   
     return (

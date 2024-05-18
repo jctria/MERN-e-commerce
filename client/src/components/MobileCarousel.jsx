@@ -17,7 +17,7 @@ const MobileCarousel = ({ images, onImageClick }) => {
         <Slider {...settings}>
         {images.map((url, index) => (
             <div key={index}>
-                <img src={url} alt={`Product Image ${index}`} onClick={() => onImageClick(index)} />
+                <img src={url} alt={`Product Image ${index}`} onClick={() => onImageClick(index)} className={`carousel-image image-${index}`}/>
             </div>
         ))}
         </Slider>

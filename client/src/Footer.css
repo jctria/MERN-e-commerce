@@ -72,6 +72,7 @@
     border: 1px solid grey; 
     border-radius: 0; 
     margin-bottom: 20px;
+    color: black;
 }
 
 .mobile-footer__social-links {

@@ -454,4 +454,9 @@
         width: 42vw !important; 
         height: auto !important; 
     }
+
+    .slick-slide img {
+        height: 59.5vh;  
+        width: auto !important;
+    }
 }

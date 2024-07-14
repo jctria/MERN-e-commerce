@@ -93,7 +93,7 @@
     color: black;
 }
 
-.close-search-btn {
+button.close-search-btn {
     border: none;
     background-color: transparent;
     padding: 0;
@@ -180,6 +180,7 @@
     margin: 0;
 }
 
+.mobile-navbar .navbar-brand:focus,
 .mobile-navbar .navbar-brand:active {
     text-decoration: none;
 }

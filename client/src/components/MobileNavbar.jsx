@@ -99,7 +99,7 @@ const MobileNavbar = () => {
                     </DropdownMenu>
                 </Dropdown>
             </Nav>
-            <NavbarBrand href="/">SSENSE</NavbarBrand>
+            <NavbarBrand href="/" className="navbar-brand">SSENSE</NavbarBrand>
             <Nav navbar>
                 <NavItem>
                     <NavLink><FaUser size={18}/></NavLink>

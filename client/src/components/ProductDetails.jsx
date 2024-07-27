@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import MobileProductDetails from './MobileProductDetails';
 import DesktopProductDetails from './DesktopProductDetails';
-import shuffleArray from '../utils/randomize';
+import shuffleArray from '../utils/shuffleArray';
 import '../ProductDetails.css'; 
 
 const ProductDetails = () => {

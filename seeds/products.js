@@ -794,4 +794,3 @@ const sampleProducts = [
 ];
 
 module.exports = sampleProducts;
-

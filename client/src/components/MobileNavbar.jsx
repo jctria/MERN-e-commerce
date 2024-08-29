@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom'; 
 import { FaBars, FaSearch, FaUser, FaShoppingBag, FaChevronRight } from 'react-icons/fa';
 import '../Navbar.css'
 
@@ -102,10 +103,10 @@ const MobileNavbar = () => {
             <NavbarBrand href="/" className="navbar-brand">SSENSE</NavbarBrand>
             <Nav navbar>
                 <NavItem>
-                    <NavLink><FaUser size={18}/></NavLink>
+                    <NavLink to="/login"><FaUser size={18}/></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink><FaShoppingBag size={18}/></NavLink>
+                    <NavLink to="/shopping-bag"><FaShoppingBag size={18}/></NavLink>
                 </NavItem>
             </Nav>
         </Navbar>

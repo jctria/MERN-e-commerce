@@ -3,6 +3,7 @@ import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
+import Login from './components/auth/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
                     <Route path="/product/:id" element={<ProductDetails />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/shopping-bag" element={<Cart />} />
+                    <Route path="/login" element={<Login />} />
                 </Routes>
             </div>
         </Router>

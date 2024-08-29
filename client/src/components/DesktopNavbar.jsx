@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom'; 
 import '../Navbar.css'
 import { FaSearch } from 'react-icons/fa';
 
@@ -105,13 +106,13 @@ const DesktopNavbar = () => {
                     </DropdownMenu>
                 </Dropdown>
                 <NavItem>
-                    <NavLink to="">LOGIN</NavLink>
+                    <NavLink to="/login">LOGIN</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="">WISHLIST</NavLink>
+                    <NavLink to="/wishlist">WISHLIST</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="">SHOPPING BAG (0)</NavLink>
+                    <NavLink to="/shopping-bag">SHOPPING BAG (0)</NavLink>
                 </NavItem>
             </Nav>
         </Navbar>

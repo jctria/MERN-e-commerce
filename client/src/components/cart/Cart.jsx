@@ -1,19 +1,10 @@
 import { Button } from 'reactstrap';
-import DesktopNavbar from './DesktopNavbar'
-import MobileNavbar from './MobileNavbar'
-import DesktopFooter from './DesktopFooter';
-import MobileFooter from './MobileFooter';
-import '../Cart.css'
+import Layout from '../layout/Layout'; 
+import './Cart.css'
 
 const Cart = () => {
     return(
-        <div>
-            <div className="mobile-navbar">
-                <MobileNavbar/>
-            </div>
-            <div className="desktop-navbar">
-                <DesktopNavbar/>
-            </div>
+        <Layout>
             <div className="body-wrapper">
                 <div className="cart-page__wrapper">
                     <div className="cart-header__wrapper">
@@ -31,13 +22,7 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
-            <div className="mobile-footer">
-                <MobileFooter />
-             </div>
-            <div className="desktop-footer">
-                 <DesktopFooter />
-            </div>
-        </div>
+        </Layout>
     )
 };
 

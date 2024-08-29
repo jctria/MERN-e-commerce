@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DesktopNavbar from '../DesktopNavbar'
-import MobileNavbar from '../MobileNavbar'
-import DesktopFooter from '../DesktopFooter';
-import MobileFooter from '../MobileFooter';
-import './Login.css';
+import Layout from '../layout/Layout'; 
+import './LoginForm.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -17,14 +14,7 @@ const Login = () => {
     };
 
     return(
-        <div>
-            <div className="mobile-navbar">
-                <MobileNavbar/>
-            </div>
-            <div className="desktop-navbar">
-                <DesktopNavbar/>
-            </div> 
-
+        <Layout>
             <div className="login-body__wrapper">
                 <div className="login-form">
                     <p>LOGIN</p>
@@ -58,14 +48,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-        
-            <div className="mobile-footer">
-                <MobileFooter />
-             </div>
-            <div className="desktop-footer">
-                 <DesktopFooter />
-            </div>
-        </div>
+        </Layout>
     )
 };
 

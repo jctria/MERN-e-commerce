@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductList from './components/ProductList';
-import ProductDetails from './components/ProductDetails';
-import Wishlist from './components/Wishlist';
-import Cart from './components/Cart';
-import Login from './components/auth/Login';
+import ProductListPage from './pages/ProductListPage';
+import ProductDetails from './components/product/ProductDetails/ProductDetails';
+import Wishlist from './components/wishlist/Wishlist';
+import Cart from './components/cart/Cart';
+import Login from './components/auth/LoginForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
@@ -12,7 +12,7 @@ function App() {
         <Router>
             <div>
                 <Routes>
-                    <Route path="/" element={<ProductList />} />
+                    <Route path="/" element={<ProductListPage />} />
                     <Route path="/product/:id" element={<ProductDetails />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/shopping-bag" element={<Cart />} />

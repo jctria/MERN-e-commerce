@@ -30,24 +30,9 @@
     color: white;
 }
 
-.mobile-navbar, .mobile-footer {
-    display: block;
-}
-
-.desktop-navbar, .desktop-footer {
-    display: none;
-}
 
 /* Desktop styles */
 @media (min-width: 991px) {
-    .mobile-navbar, .mobile-footer {
-        display: none;
-    }
-
-    .desktop-navbar, .desktop-footer {
-        display: block;
-    }
-
     .login-body__wrapper {
         display: flex;
         justify-content: center; 

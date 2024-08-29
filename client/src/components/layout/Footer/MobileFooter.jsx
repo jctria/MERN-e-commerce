@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'; 
 import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
-import '../Footer.css'; 
+import './Footer.css'; 
 
 const MobileFooter = () => {   
     return (

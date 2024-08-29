@@ -1,10 +1,10 @@
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
 import { FaChevronDown, FaCheck, FaRegHeart } from 'react-icons/fa';
-import MobileNavbar from './MobileNavbar';
+import MobileNavbar from '../../layout/Navbar/MobileNavbar';
 import MobileCarousel from './MobileCarousel';
 import FullscreenCarousel from './FullscreenCarousel';
 import HorizontalCarousels from './HorizontalCarousels';
-import MobileFooter from './MobileFooter';
+import MobileFooter from '../../layout/Footer/MobileFooter';
 
 const MobileProductDetails = ({ product, products, sizeDropdownOpen, selectedSize, toggleSizeDropdown, handleSizeSelect, handleImageClick, isFullscreen, selectedImageIndex, handleFullscreenExit, recentlyViewed }) => {
     return (

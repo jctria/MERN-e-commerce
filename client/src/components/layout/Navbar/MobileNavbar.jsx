@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom'; 
-import '../Navbar.css'
-import { FaSearch } from 'react-icons/fa';
+import { FaBars, FaSearch, FaUser, FaShoppingBag, FaChevronRight } from 'react-icons/fa';
+import './Navbar.css'
 
-const DesktopNavbar = () => {
+const MobileNavbar = () => {
     const [searchDropdownOpen, setSearchDropdownOpen] = useState(false);
-    const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('MENSWEAR'); 
     const [searchInput, setSearchInput] = useState('');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     const toggleSearchDropdown = () => {
         setSearchDropdownOpen(!searchDropdownOpen);
@@ -17,38 +19,46 @@ const DesktopNavbar = () => {
             setSearchInput('');
         }
     };    
-    
+
     const handleSearchLinkClick = (e, category) => {
-        e.stopPropagation();
-        setSelectedCategory(category);
+        e.stopPropagation(); 
+        setSelectedCategory(category); 
     };
 
     const handleSearchInputChange = (e) => {
         setSearchInput(e.target.value);
     };
 
-    const toggleLanguageDropdown = () => setLanguageDropdownOpen(!languageDropdownOpen);
-
     return (
-        <Navbar className="desktop-navbar" expand="md">
+        <Navbar className="mobile-navbar">
             <Nav navbar>
                 <NavItem>
-                    <NavLink to="">MENSWEAR</NavLink>
+                    <FaBars onClick={toggleMenu} size={18}/>
                 </NavItem>
-                <NavItem>
-                    <NavLink to="">WOMENSWEAR</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink to="">EVERYTHING ELSE</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink to="">SALE</NavLink>
-                </NavItem>
+                    <div className={`fullscreen-menu ${isMenuOpen ? 'open' : 'closed'}`}>
+                        <button className="close-menu-btn" onClick={toggleMenu}>
+                            CLOSE
+                        </button>
+                        <Nav className="nav-link__wrapper" vertical>
+                            <NavItem>MENSWEAR <FaChevronRight /></NavItem>
+                            <NavItem>WOMENSWEAR <FaChevronRight /></NavItem>
+                            <NavItem className="nav-link__divider">EVERYTHING ELSE <FaChevronRight /></NavItem>
+                            <NavItem>Shopping Bag (00)</NavItem>
+                            <NavItem>Wishlist</NavItem>
+                            <NavItem className="nav-link__divider">Account - Login</NavItem>
+                            <NavItem>Language <FaChevronRight /></NavItem>
+                            <NavItem className="nav-link__divider">Canada / CAD <FaChevronRight /></NavItem>
+                            <NavItem>Customer Care <FaChevronRight /></NavItem>
+                            <NavItem>Live Assistance</NavItem>
+                            <NavItem>Locations <FaChevronRight /></NavItem>
+                        </Nav>
+                    </div>
+
                 <Dropdown nav isOpen={searchDropdownOpen} toggle={toggleSearchDropdown}>
                     <DropdownToggle nav>
-                        SEARCH
+                        <FaSearch size={18}/>
                     </DropdownToggle>
-                    <DropdownMenu className="search-dropdown-menu">
+                    <DropdownMenu className="mobile-search-dropdown-menu">
                         <span className="search-link-wrapper">
                             <DropdownItem className={`search-dropdown-item ${selectedCategory === 'MENSWEAR' ? 'selected' : ''}`}>
                                 <NavLink to="" onClick={(e) => handleSearchLinkClick(e, 'MENSWEAR')}>MENSWEAR</NavLink>
@@ -60,7 +70,7 @@ const DesktopNavbar = () => {
                                 <NavLink to="" onClick={(e) => handleSearchLinkClick(e, 'EVERYTHING ELSE')}>EVERYTHING ELSE</NavLink>
                             </DropdownItem>
                         </span>
-                        <DropdownItem className="search-dropdown-item">
+                        <DropdownItem className="mobile-search-dropdown-item">
                             <div className="search-input-wrapper">
                                 <input
                                     type="text"
@@ -78,45 +88,29 @@ const DesktopNavbar = () => {
                                 </button>
                             </div>                        
                         </DropdownItem>
-                        <DropdownItem className="search-dropdown-item">
+                        <DropdownItem className="mobile-search-dropdown-item">
                                 <input type="checkbox" onClick={(e) => e.stopPropagation()}/>
                                 <label>SALE ONLY</label>
                         </DropdownItem>
                         {searchInput.length > 0 && (
-                            <DropdownItem className="search-dropdown-item with-border-top">
+                            <DropdownItem className="mobile-search-dropdown-item with-border-top">
                                 <p className="search-submit">Search for: "{searchInput}"</p>
                             </DropdownItem>
                         )}
                     </DropdownMenu>
                 </Dropdown>
             </Nav>
-
-            <NavbarBrand href="/">SSENSE</NavbarBrand>
-            
+            <NavbarBrand href="/" className="navbar-brand">SSENSE</NavbarBrand>
             <Nav navbar>
-                <Dropdown nav isOpen={languageDropdownOpen} toggle={toggleLanguageDropdown} onMouseEnter={toggleLanguageDropdown} onMouseLeave={toggleLanguageDropdown}>
-                    <DropdownToggle nav>
-                        ENGLISH
-                    </DropdownToggle>
-                    <DropdownMenu className="language-dropdown-menu">
-                        <DropdownItem className="language-dropdown-item">FRANÇAIS</DropdownItem>
-                        <DropdownItem className="language-dropdown-item">日本語</DropdownItem>
-                        <DropdownItem className="language-dropdown-item">中文</DropdownItem>
-                        <DropdownItem className="language-dropdown-item">한국어</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
                 <NavItem>
-                    <NavLink to="/login">LOGIN</NavLink>
+                    <NavLink to="/login"><FaUser size={18}/></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/wishlist">WISHLIST</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink to="/shopping-bag">SHOPPING BAG (0)</NavLink>
+                    <NavLink to="/shopping-bag"><FaShoppingBag size={18}/></NavLink>
                 </NavItem>
             </Nav>
         </Navbar>
     );
 };
-  
-export default DesktopNavbar;
+
+export default MobileNavbar;

@@ -1,13 +1,3 @@
-.plp-page__wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 0;
-    width: calc(100vw - 40px); 
-}
-
 .plp__links {
     list-style-type: none; 
     padding: 0; 
@@ -31,7 +21,7 @@
 }
 
 
-/* Left column */
+/* Left sidebar */
 .plp-left-column__wrapper {
     width: 17.25%;
     height: 100vh;
@@ -49,7 +39,7 @@
 }
 
 
-/* Right column */
+/* Right sidebar */
 .plp-right-column__wrapper {
     width: 17.25%;
     height: 100vh;
@@ -93,105 +83,7 @@
 }
 
 
-
-/* Products column */
-.plp-products-column__wrapper {
-    width: 65.5%;
-}
-
-.plp-product-card__wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-column-gap: 15px; 
-    grid-row-gap: 30px; 
-    align-items: start;
-}
-
-.product-card {
-    width: auto; 
-    height: auto; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: none !important;
-}
-
-.product-card a {
-    width: 100%;
-    height: 100%;
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: start; 
-    width: 100%;
-    height: 100%;
-    padding: 0 !important;
-}
-
-.product-card__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15.5vw !important; 
-    height: auto !important; 
-}
-
-.card-img {
-    width: 100%; 
-    height: 100%;
-    object-fit: contain;
-}
-
-.product-card__description {
-    padding-top: 12px;
-    width: 100%;
-}
-
-.product-card__description .card-subtitle {
-    margin-bottom: 2px; 
-}
-
-.brand-name {
-    text-transform: uppercase;
-}
-
-
-/* Pagination nav */
-.plp-pagination__wrapper {
-    display: flex; 
-    justify-content: center; 
-    padding: 60px 0;
-}
-
-.pagination {
-    margin: 0;
-}
-
-.page-link {
-    color: black !important;
-    border: none !important;   
-    font-size: 11px !important;
-}
-
-.page-link:hover, .page-link:focus {
-    background-color: transparent !important;
-}
-
-.pagination .page-item.active .page-link {
-    text-decoration: underline;  
-    background-color: transparent;   
-}
-  
-.pagination .page-item .page-link:focus { 
-    box-shadow: none;
-}
-
-
-/* Responsive styles */
+/* Mobile filter bar */
 .filter-bar {
     display: none;
     justify-content: space-around;
@@ -272,59 +164,13 @@
 }
 
 
-/* Desktop */
-@media (min-width: 1200px) {
-    .use-mobile-navbar {
-        display: none;
-    }
-    .use-mobile-footer {
-        display: none;
-    }
-}
-
-/* Smaller desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .plp-product-card__wrapper {
-        grid-template-columns: repeat(3, 1fr); 
-    }
-    .use-mobile-navbar {
-        display: none;
-    }
-    .use-mobile-footer {
-        display: none;
-    }
-    .product-card__image {
-        width: 20.5vw !important; 
-    }
-}
-
-
+/* Responsive styles */
 /* Tablet */
 @media (min-width: 576px) and (max-width: 991px) {
-    .use-desktop-navbar {
-        display: none;
-    }
     .plp-left-column__wrapper, .plp-right-column__wrapper{
         display: none;  
     }
-    .use-desktop-footer {
-        display: none;
-    }
-    .live-chat-btn {
-        display: none;
-    }
-    .plp-page__wrapper {
-        margin-top: 20px !important;
-    }
-    .plp-products-column__wrapper {
-        width: 100%;
-    }
-    .plp-product-card__wrapper {
-        grid-template-columns: repeat(3, 1fr); 
-    }
-    .product-card__image {
-        width: 31vw !important; 
-    }
+
     .filter-bar {
         display: flex;
     }
@@ -332,30 +178,10 @@
 
 /* Mobile */
 @media (max-width: 575px) {
-    .use-desktop-navbar {
-        display: none;
-    }
     .plp-left-column__wrapper, .plp-right-column__wrapper{
         display: none;  
     }
-    .use-desktop-footer {
-        display: none;
-    }
-    .live-chat-btn {
-        display: none;
-    }
-    .plp-page__wrapper {
-        margin-top: 20px !important;
-    }
-    .plp-products-column__wrapper {
-        width: 100%;
-    }
-    .plp-product-card__wrapper {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    .product-card__image {
-        width: 43.5vw !important; 
-    }
+    
     .filter-bar {
         display: flex;
     }

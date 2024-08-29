@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
 import { FaChevronDown, FaCheck } from 'react-icons/fa';
-import DesktopNavbar from './DesktopNavbar';
+import DesktopNavbar from '../../layout/Navbar/DesktopNavbar';
 import FullscreenCarousel from './FullscreenCarousel';
 import HorizontalCarousels from './HorizontalCarousels';
-import DesktopFooter from './DesktopFooter';
-import LiveChat from './LiveChat';
+import DesktopFooter from '../../layout/Footer/DesktopFooter';
+import LiveChat from '../../common/LiveChat';
 
 const DesktopProductDetails = ({ product, products, sizeDropdownOpen, selectedSize, toggleSizeDropdown, handleSizeSelect, handleImageClick, isFullscreen, selectedImageIndex, handleFullscreenExit, recentlyViewed }) => {
     return (

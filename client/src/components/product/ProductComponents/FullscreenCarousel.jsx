@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
+import './FullscreenCarousel.css'
 
-const FullscreenImageCarousel = ({ isOpen, images, selectedIndex, closeCarousel }) => {
+const FullscreenCarousel = ({ isOpen, images, selectedIndex, closeCarousel }) => {
     const selectedImgRef = useRef(null);
 
     useEffect(() => {
@@ -22,7 +23,7 @@ const FullscreenImageCarousel = ({ isOpen, images, selectedIndex, closeCarousel 
                 />
             ))}
         </div>
-    );
+    ); 
 };
 
-export default FullscreenImageCarousel;
+export default FullscreenCarousel;

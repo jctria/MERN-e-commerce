@@ -1,15 +1,14 @@
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
-import { FaChevronDown, FaCheck, FaRegHeart } from 'react-icons/fa';
-import MobileNavbar from '../../layout/Navbar/MobileNavbar';
-import MobileCarousel from './MobileCarousel';
-import FullscreenCarousel from './FullscreenCarousel';
-import HorizontalCarousels from './HorizontalCarousels';
-import MobileFooter from '../../layout/Footer/MobileFooter';
+import { Button } from 'reactstrap';
+import { FaRegHeart } from 'react-icons/fa';
+import MobileCarousel from '../ProductComponents//MobileCarousel';
+import FullscreenCarousel from '../ProductComponents/FullscreenCarousel';
+import SizeDropdown from '../ProductComponents//SizeDropdown';
+import CardCarousel from '../ProductComponents/CardCarousel';
+import Layout from '../../layout/Layout';
 
 const MobileProductDetails = ({ product, products, sizeDropdownOpen, selectedSize, toggleSizeDropdown, handleSizeSelect, handleImageClick, isFullscreen, selectedImageIndex, handleFullscreenExit, recentlyViewed }) => {
     return (
-        <div className="pd-mobile">
-            <MobileNavbar />
+        <Layout>
             <FullscreenCarousel
                 isOpen={isFullscreen}
                 images={product ? product.imageUrl.slice(1) : []}
@@ -37,34 +36,13 @@ const MobileProductDetails = ({ product, products, sizeDropdownOpen, selectedSiz
                             </p>
 
                             <div>
-                                <Dropdown isOpen={sizeDropdownOpen} toggle={toggleSizeDropdown}>
-                                    <DropdownToggle className="pdp__size-btn">
-                                        {selectedSize} <FaChevronDown />
-                                    </DropdownToggle>
-                                    <DropdownMenu className="pdp__size-menu">
-                                        <DropdownItem
-                                            className="pdp__size-menu-item select"
-                                            onClick={() => handleSizeSelect('SELECT A SIZE')}
-                                        >
-                                            <span className="checkmark-wrapper">
-                                                {selectedSize === 'SELECT A SIZE' ? <FaCheck /> : <span style={{ opacity: 0 }}><FaCheck /></span>}
-                                            </span>
-                                            SELECT A SIZE
-                                        </DropdownItem>
-                                        {product.sizes.map((size, index) => (
-                                            <DropdownItem
-                                                className="pdp__size-menu-item"
-                                                key={index}
-                                                onClick={() => handleSizeSelect(size)}
-                                            >
-                                                <span className="checkmark-wrapper">
-                                                    {selectedSize === size ? <FaCheck /> : <span style={{ opacity: 0 }}><FaCheck /></span>}
-                                                </span>
-                                                {size}
-                                            </DropdownItem>
-                                        ))}
-                                    </DropdownMenu>
-                                </Dropdown>
+                                <SizeDropdown
+                                    isOpen={sizeDropdownOpen}
+                                    toggle={toggleSizeDropdown}
+                                    selectedSize={selectedSize}
+                                    sizes={product.sizes}
+                                    onSizeSelect={handleSizeSelect}
+                                />
                                 <div className="pdp-mobile-info__btn-wrapper">
                                     <Button className="bag-btn">ADD TO BAG</Button>
                                     <Button className="wishlist-btn"><FaRegHeart /></Button>
@@ -84,11 +62,10 @@ const MobileProductDetails = ({ product, products, sizeDropdownOpen, selectedSiz
                 </div>
             </div>
 
-            <HorizontalCarousels title="YOU MAY ALSO LIKE" products={products} currentProductId={product ? product._id : null} />
-            <HorizontalCarousels title={product ? product.brand : ''} products={products} filterBrand={product ? product.brand : ''} />
-            <HorizontalCarousels title="RECENTLY VIEWED" products={recentlyViewed} />
-            <MobileFooter />
-        </div>
+            <CardCarousel title="YOU MAY ALSO LIKE" products={products} currentProductId={product ? product._id : null} />
+            <CardCarousel title={product ? product.brand : ''} products={products} filterBrand={product ? product.brand : ''} />
+            <CardCarousel title="RECENTLY VIEWED" products={recentlyViewed} />
+        </Layout>
     );
 };
 

@@ -1,0 +1,124 @@
+.pdp-products__container {
+    margin-bottom: 47px;
+}
+
+.pdp-products__container h2 {
+    font-size: 11px;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+.pdp-product-card__container {
+    display: flex; 
+    gap: 42px;
+    margin-left: 20px;
+    overflow-x: auto; 
+    flex-wrap: nowrap; 
+}
+
+.pdp-product-card__container .card {
+    flex-shrink: 0; 
+}
+
+.pdp-product-card {
+    width: 12.25vw !important; 
+    height: auto !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+}
+
+.pdp-product-card a {
+    width: 100%;
+    height: 100%;
+}
+
+.pdp-product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: start; 
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+}
+
+.pdp-product-card__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14.25vw !important; 
+    height: auto !important; 
+}
+
+.pdp-product-card .card-img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+}
+
+.pdp-product-card__description {
+    padding-top: 12px;
+    width: 100%;
+}
+
+.pdp-product-card__description .card-subtitle {
+    margin-bottom: 2px; 
+}
+
+.pdp-product-card__container::-webkit-scrollbar {
+    display: none; 
+}
+
+.shop-all-link {
+    text-decoration: underline;  
+    margin-left: 10px;
+}
+
+.shop-all-link:focus {
+    text-decoration: underline;  
+}
+
+
+/* Responsive styles */
+/* Smaller desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .pdp-product-card__container {
+        gap: 75px;
+    }
+    .pdp-product-card__image {
+        width: 17.5vw !important; 
+    }
+}
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 991px) {    
+    .pdp-product-card__container {
+        gap: 75px;
+    }
+    .pdp-product-card__image {
+        width: 17.5vw !important; 
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .pdp-product-card__container {
+        gap: 25px;
+    }
+    
+    .pdp-product-card {
+        width: auto !important; 
+        height: auto !important; 
+    }
+    
+    .pdp-product-card__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 42vw !important; 
+        height: auto !important; 
+    }
+}

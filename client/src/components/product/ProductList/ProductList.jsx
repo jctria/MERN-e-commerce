@@ -1,5 +1,6 @@
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCard from '../ProductComponents/ProductCard';
 import Pagination from './Pagination';
+import scrollToTop from '../../../utils/scrollToTop'; 
 import './ProductList.css';
 
 const ProductList = ({ products, currentPage, itemsPerPage, paginate }) => {
@@ -11,7 +12,7 @@ const ProductList = ({ products, currentPage, itemsPerPage, paginate }) => {
         <div>
             <div className="plp-product-card__wrapper">
                 {currentProducts.map(product => (
-                    <ProductCard key={product._id} product={product} />
+                    <ProductCard key={product._id} product={product} onClick={scrollToTop} />
                 ))}
             </div>
             <div className="plp-pagination__wrapper">

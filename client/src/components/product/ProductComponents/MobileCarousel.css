@@ -1,0 +1,43 @@
+.pdp-mobile-carousel__wrapper {
+    max-width: 100%; 
+    overflow: hidden; 
+    height: auto;
+    padding-bottom: 30px;
+    margin-top: 55px;
+}
+
+.slick-slide img {
+    height: auto;  
+    margin: auto;  
+}
+
+.carousel-image.image-0 {
+    width: 50vw; 
+}
+
+.carousel-image.image-1 {
+    width: 32.5vw; 
+}
+
+
+/* Responsive styles */
+/* Tablet */
+@media (min-width: 576px) and (max-width: 991px) {    
+    .pdp-mobile-carousel__wrapper {
+        flex: 0 0 56%; 
+    }
+    .carousel-image.image-0 {
+        width: 32.5vw; 
+    }
+    .carousel-image.image-1 {
+        width: 21.5vw; 
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .slick-slide img {
+        height: 59.5vh;  
+        width: auto !important;
+    }
+}

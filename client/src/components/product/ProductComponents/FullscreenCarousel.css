@@ -1,0 +1,45 @@
+.pdp-fullscreen-carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1050;
+    overflow-y: auto; 
+    box-sizing: border-box;
+    cursor: zoom-out; 
+}
+
+.pdp-fullscreen-carousel img {
+    width: auto !important;                
+    height: 1410px !important;       
+    display: block;          
+    margin: 40px auto 80px;     
+}
+
+.pdp-fullscreen-carousel img:last-child {
+    margin-bottom: 40px;    
+}
+
+.pdp-minimize-btn {
+    position: fixed;
+    top: 0;
+    right: 26px;
+    font-size: 36px;
+    font-weight: 5;
+    cursor: pointer;
+    color: black;
+}
+
+
+/* Responsive styles */
+/* Mobile */
+@media (max-width: 575px) {
+    .pdp-fullscreen-carousel img {
+        width: 90% !important;                
+        height: auto !important;       
+        display: block;          
+        margin: 40px auto 80px;       
+    }
+}

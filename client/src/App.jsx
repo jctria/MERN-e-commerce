@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductListPage from './pages/ProductListPage';
-import ProductDetails from './components/product/ProductDetails/ProductDetails';
+import ProductDetailPage from './pages/ProductDetailPage';
 import Wishlist from './components/wishlist/Wishlist';
 import Cart from './components/cart/Cart';
 import Login from './components/auth/LoginForm';
@@ -13,7 +13,7 @@ function App() {
             <div>
                 <Routes>
                     <Route path="/" element={<ProductListPage />} />
-                    <Route path="/product/:id" element={<ProductDetails />} />
+                    <Route path="/product/:id" element={<ProductDetailPage />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/shopping-bag" element={<Cart />} />
                     <Route path="/login" element={<Login />} />
